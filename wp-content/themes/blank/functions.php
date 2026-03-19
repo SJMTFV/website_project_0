@@ -1,13 +1,14 @@
 <?php
 function hb_enqueue_assets() {
-    wp_enqueue_style( 'hb-main-style', get_stylesheet_uri(), array(), '1.3' );
+    wp_enqueue_style( 'hb-google-fonts', 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap', array(), null );
+    wp_enqueue_style( 'hb-main-style', get_stylesheet_uri(), array(), '1.5' );
     
     if ( is_front_page() ) {
-        wp_enqueue_style( 'hb-front-page-style', get_template_directory_uri() . '/front-page.css', array('hb-main-style'), '1.0' );
+        wp_enqueue_style( 'hb-front-page-style', get_template_directory_uri() . '/front-page.css', array('hb-main-style'), '1.9' );
     }
     
     if ( is_page('aboutme') ) {
-        wp_enqueue_style( 'hb-aboutme-style', get_template_directory_uri() . '/aboutme.css', array('hb-main-style'), '1.0' );
+        wp_enqueue_style( 'hb-aboutme-style', get_template_directory_uri() . '/aboutme.css', array('hb-main-style'), '1.7' );
     }
     
     if ( is_page('travel') ) {

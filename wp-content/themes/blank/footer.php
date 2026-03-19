@@ -1,6 +1,6 @@
   <footer class="hb-footer" id="contact">
     <div class="hb-footer-left">
-      <span>Copyright © 2025 Hanbang Hua</span>
+      <span>Copyright © 2025 Hua Studio</span>
       <span>Phone: +1 530-601-8495</span>
       <span>Email: <a href="mailto:victorhua26@gmail.com">victorhua26@gmail.com</a></span>
     </div>

@@ -9,31 +9,32 @@
 /* Hero Section */
 .hb-about-hero {
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 20px 32px;
   background: #ffffff;
 }
 
 .hb-about-title {
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 700;
-  color: #1a1a1a;
-  letter-spacing: 0.05em;
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(56px, 10vw, 120px);
+  font-weight: 400;
+  color: #1d1d1f;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 /* Content Section */
 .hb-about-content {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 60px 20px 80px;
+  padding: 48px 32px 72px;
 }
 
 /* Intro with Photo */
 .hb-about-intro {
   display: flex;
-  gap: 50px;
+  gap: 56px;
   align-items: flex-start;
-  margin-bottom: 80px;
+  margin-bottom: 64px;
 }
 
 .hb-about-photo {
@@ -41,21 +42,25 @@
 }
 
 .hb-about-photo img {
-  width: 320px;
-  height: 400px;
-  border-radius: 12px;
+  width: 260px;
+  height: 320px;
+  border-radius: 16px;
   object-fit: cover;
+  object-position: top;
 }
 
 .hb-about-text {
   flex: 1;
+  padding-top: 4px;
 }
 
 .hb-about-text p {
-  font-size: 17px;
-  line-height: 1.9;
-  color: #555555;
-  margin-bottom: 20px;
+  font-size: clamp(15px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #6e6e73;
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
 }
 
 .hb-about-text p:last-child {
@@ -66,9 +71,26 @@
 .hb-about-achievements {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
-  padding: 60px 0;
-  border-top: 1px solid #e0e0e0;
+  gap: 32px;
+  padding: 48px 0 0;
+  position: relative;
+}
+
+/* frosty dividing line — top */
+.hb-about-achievements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95) 30%,
+    rgba(200, 230, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 70%,
+    transparent);
+  box-shadow: 0 0 10px rgba(180, 220, 255, 0.6);
 }
 
 .hb-achievement {
@@ -78,52 +100,204 @@
 
 .hb-achievement-number {
   display: block;
-  font-size: 56px;
-  font-weight: 700;
-  color: #2563eb;
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(44px, 5vw, 64px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
   line-height: 1;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hb-achievement-label {
   display: block;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
-  color: #555555;
+  color: #86868b;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+}
+
+/* ----------------------------------------
+   CAREER TIMELINE
+----------------------------------------- */
+
+.hb-career {
+  position: relative;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  padding: clamp(48px, 7vw, 96px) clamp(24px, 8vw, 160px);
+}
+
+/* frosty lines top + bottom */
+.hb-career::before,
+.hb-career::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95) 30%,
+    rgba(200, 230, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 70%,
+    transparent);
+  box-shadow: 0 0 10px rgba(180, 220, 255, 0.6);
+}
+.hb-career::before { top: 0; }
+.hb-career::after  { bottom: 0; }
+
+.hb-career-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hb-career-title {
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* vertical timeline */
+.hb-timeline {
+  position: relative;
+  padding-left: 2px;
+}
+
+.hb-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom,
+    transparent,
+    #d0d0d5 10%,
+    #d0d0d5 90%,
+    transparent);
+}
+
+.hb-timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 10px 12px 36px 28px;
+  position: relative;
+  border-radius: 14px;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.hb-timeline-item:hover {
+  transform: scale(1.03);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.hb-timeline-item:last-child {
+  padding-bottom: 10px;
+}
+
+/* dot */
+.hb-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c0c0c5;
+  transition: background 0.2s;
+}
+
+.hb-timeline-item--active::before {
+  background: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.hb-timeline-date {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6e6e73;
+  letter-spacing: 0.02em;
+  padding-top: 2px;
+  white-space: nowrap;
+}
+
+.hb-timeline-org {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.hb-timeline-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.hb-timeline-role {
+  font-size: 14px;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
+  padding-left: 36px; /* icon 28px + gap 8px — aligns with name text */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .hb-about-intro {
     flex-direction: column;
-    gap: 30px;
+    gap: 28px;
   }
 
   .hb-about-photo img {
     width: 100%;
-    max-width: 320px;
+    max-width: 240px;
     height: auto;
     aspect-ratio: 4 / 5;
   }
 
   .hb-about-hero {
-    padding: 50px 20px;
+    padding: 28px 20px 20px;
   }
 
   .hb-about-content {
-    padding: 40px 20px 60px;
+    padding: 32px 20px 48px;
   }
 
   .hb-about-achievements {
     flex-direction: column;
-    gap: 40px;
-    padding: 40px 0;
-  }
-
-  .hb-achievement-number {
-    font-size: 44px;
+    gap: 32px;
+    padding: 36px 0 0;
   }
 }
-

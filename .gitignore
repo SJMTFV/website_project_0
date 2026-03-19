@@ -1,5 +1,6 @@
 # WordPress sensitive config
 wp-config.php
+docker-compose.yml
 
 # WordPress uploads (large media files, not source code)
 wp-content/uploads/

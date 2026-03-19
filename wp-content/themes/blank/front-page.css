@@ -5,8 +5,8 @@
 .hb-cover {
   position: relative;
   width: 100%;
-  height: calc(100vh - 120px);
-  min-height: 420px;
+  height: calc(50vh - 60px);
+  min-height: 220px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -27,11 +27,12 @@
 }
 
 .hb-cover-title {
-  font-size: clamp(40px, 6vw, 72px);
-  font-weight: 700;
+  font-family: 'Bebas Neue', system-ui, sans-serif;
+  font-size: clamp(72px, 13vw, 160px);
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #1a1a1a;
+  color: #1d1d1f;
 }
 
 .hb-cover-keywords {
@@ -51,95 +52,167 @@
 
 
 /* ----------------------------------------
-   IDENTITY SYMBOL (Fog + Words Orbit)
+   BIO SUMMARY
+----------------------------------------- */
+
+.hb-bio {
+  width: 100%;
+  padding: clamp(28px, 4vw, 56px) clamp(24px, 10vw, 200px);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* glossy dividing lines (top + bottom) */
+.hb-bio::before,
+.hb-bio::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95) 30%,
+    rgba(200, 230, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.95) 70%,
+    transparent);
+  box-shadow: 0 0 10px rgba(180, 220, 255, 0.6);
+}
+
+.hb-bio::before { top: 0; }
+.hb-bio::after  { bottom: 0; }
+
+.hb-bio-text {
+  max-width: 700px;
+  font-size: clamp(15px, 1.6vw, 20px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #6e6e73;
+  text-align: center;
+}
+
+/* ----------------------------------------
+   IDENTITY — Apple-style dark showcase
 ----------------------------------------- */
 
 .hb-identity {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  padding: 100px 0;
-  background: linear-gradient(to bottom, #ffffff 0%, #b8c9e0 50%, #8fa4c4 100%);
+  padding: clamp(48px, 8vw, 100px) clamp(24px, 6vw, 80px);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
+/* very faint radial tint behind the words */
+.hb-identity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%,
+    rgba(129, 140, 248, 0.06) 0%,
+    transparent 70%);
+  pointer-events: none;
+}
+
 .hb-identity-inner {
   position: relative;
   z-index: 2;
-  width: min(70vw, 900px);
-  height: min(70vw, 900px);
+  width: 100%;
+  max-width: 1100px;
 }
-
-
-/* ----------------------------------------
-   ORBITING TEXT - All tags orbit common center
------------------------------------------ */
 
 .hb-identity-orbit {
-  position: absolute;
-  inset: 0;
-  animation: orbit-spin 90s linear infinite;
-  transform-origin: center center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: clamp(6px, 1.2vw, 20px) clamp(16px, 3vw, 48px);
+  width: 100%;
 }
 
-@keyframes orbit-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-/* identity tag text */
+/* shared tag styles */
 .hb-tag {
-  position: absolute;
   font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               "SF Pro Text", "Segoe UI", sans-serif;
-  font-size: 48px;
+               "SF Pro Display", "Segoe UI", sans-serif;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: #2563eb;
-  white-space: nowrap;
-  
-  /* counter-rotate to keep text upright */
-  animation: counter-spin 90s linear infinite;
+
+  /* gradient text */
+  background: linear-gradient(90deg,
+    #60a5fa   0%,
+    #818cf8  25%,
+    #c084fc  50%,
+    #818cf8  75%,
+    #60a5fa 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  filter: drop-shadow(0 0 14px rgba(129, 140, 248, 0.18));
+
+  opacity: 0;
+  animation:
+    tag-appear 0.9s cubic-bezier(0.22, 1, 0.36, 1) both,
+    shimmer    7s 2s ease-in-out infinite;
 }
 
-@keyframes counter-spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+@keyframes tag-appear {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
-/* position each tag at 90° intervals around center */
-.hb-tag-1 {  /* top - 0° */
-  top: 8%;
-  left: 50%;
+@keyframes shimmer {
+  0%   { background-position:  100% 0; }
+  100% { background-position: -100% 0; }
 }
 
-.hb-tag-2 {  /* right - 90° */
-  top: 50%;
-  left: 92%;
+/* 2×2 diagonal layout — large words on top-left & bottom-right */
+.hb-tag-1 { /* MOUNTAINEER — large, top-left, bottom-aligned */
+  grid-column: 1; grid-row: 1;
+  font-size: clamp(26px, 5vw, 66px);
+  text-align: left;
+  align-self: end;
+  animation-delay: 0.1s, 2s;
 }
 
-.hb-tag-3 {  /* bottom - 180° */
-  top: 92%;
-  left: 50%;
+.hb-tag-2 { /* ATHLETE — small, top-right, bottom-aligned */
+  grid-column: 2; grid-row: 1;
+  font-size: clamp(14px, 2.6vw, 34px);
+  text-align: right;
+  align-self: end;
+  animation-delay: 0.3s, 2s;
 }
 
-.hb-tag-4 {  /* left - 270° */
-  top: 50%;
-  left: 8%;
+.hb-tag-3 { /* ENGINEER — small, bottom-left, top-aligned */
+  grid-column: 1; grid-row: 2;
+  font-size: clamp(14px, 2.6vw, 34px);
+  text-align: left;
+  align-self: start;
+  animation-delay: 0.5s, 2s;
+}
+
+.hb-tag-4 { /* PHYSICIST — large, bottom-right, top-aligned */
+  grid-column: 2; grid-row: 2;
+  font-size: clamp(26px, 5vw, 66px);
+  text-align: right;
+  align-self: start;
+  animation-delay: 0.7s, 2s;
 }
 
 /* ----------------- responsive tweaks ----------------- */
 
-@media (max-width: 768px) {
-  .hb-identity {
-    aspect-ratio: 16 / 9;
+@media (max-width: 540px) {
+  .hb-identity-orbit {
+    grid-template-columns: 1fr;
   }
-  .hb-tag {
-    font-size: 24px;
-    letter-spacing: 0.16em;
-  }
+  .hb-tag-1, .hb-tag-4 { font-size: clamp(28px, 8vw, 48px); text-align: center; }
+  .hb-tag-2, .hb-tag-3 { font-size: clamp(18px, 5vw, 30px); text-align: center; }
 }

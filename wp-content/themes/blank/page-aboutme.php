@@ -17,8 +17,9 @@ get_header();
         <img src="<?php echo get_template_directory_uri(); ?>/aboutme_photo.JPG" alt="Hanbang Hua">
       </div>
       <div class="hb-about-text">
-        <p>Welcome to my personal space. I'm passionate about exploring the intersection of science, engineering, and adventure. Whether I'm climbing mountains or solving complex physics problems, I bring the same dedication and curiosity to everything I do.</p>
-        <p>My journey has taken me from physics laboratories to mountain peaks, always driven by the desire to understand how things work and push my own limits. I believe in learning by doing, whether that means building electronics from scratch or navigating challenging terrain in national parks across the country.</p>
+        <p>I'm a hardware engineer at Nokia, developing RF linearization algorithms for next-generation wireless systems. My work spans the full stack — from algorithm design to hardware development. I've built multi-layer controlled-impedance PCBs, and written scripts in Rust and Python for wearable medical devices.</p>
+        <p>I hold a Master's in Electrical Engineering from Northwestern University and a Bachelor's in Physics from UC Berkeley, where I spent two years as an undergraduate researcher at the Ultrafast Nano-Optics Group investigating 2D materials — graphene, hBN, and transition metal dichalcogenides. At Northwestern's Querrey Simpson Institute for Bioelectronics, I led development of a wireless NIRS health-sensing platform, cutting power consumption by 80% and reducing form factor by 50%.</p>
+        <p>Outside the lab, I'm a mountaineer with 20+ summits and have explored 19 national parks across the US. I believe the same mindset that gets you up a mountain — preparation, patience, and timing — applies directly to engineering.</p>
       </div>
     </div>
 
@@ -32,11 +33,55 @@ get_header();
           <span class="hb-achievement-label">National Parks Visited</span>
         </div>
         <div class="hb-achievement">
-          <span class="hb-achievement-number" data-target="50" data-suffix="+">0</span>
+          <span class="hb-achievement-number" data-target="20" data-suffix="+">0</span>
           <span class="hb-achievement-label">Mountain Summits Reached</span>
         </div>
       </div>
 
+  </section>
+
+  <section class="hb-career">
+    <div class="hb-career-inner">
+      <h2 class="hb-career-title">Journey</h2>
+      <div class="hb-timeline">
+
+        <div class="hb-timeline-item">
+          <div class="hb-timeline-date">2019 – 2021</div>
+          <div class="hb-timeline-body">
+            <div class="hb-timeline-org"><span class="hb-timeline-icon">🐎</span> UC Davis</div>
+            <div class="hb-timeline-role">Explored astrophysics and ODMR spectroscopy</div>
+          </div>
+        </div>
+
+        <div class="hb-timeline-item">
+          <div class="hb-timeline-date">2021 – 2023</div>
+          <div class="hb-timeline-body">
+            <div class="hb-timeline-org"><span class="hb-timeline-icon">🐻</span> UC Berkeley</div>
+            <div class="hb-timeline-role">B.A. Physics · Ultrafast Nano-Optics Group</div>
+          </div>
+        </div>
+
+        <div class="hb-timeline-item">
+          <div class="hb-timeline-date">2023 – 2025</div>
+          <div class="hb-timeline-body">
+            <div class="hb-timeline-org"><span class="hb-timeline-icon">🐾</span> Northwestern University</div>
+            <div class="hb-timeline-role">M.S. Electrical Engineering · Bioelectronics Research</div>
+          </div>
+        </div>
+
+        <div class="hb-timeline-item hb-timeline-item--active">
+          <div class="hb-timeline-date">2025 – Now</div>
+          <div class="hb-timeline-body">
+            <div class="hb-timeline-org"><span class="hb-timeline-icon">🐍</span> Nokia</div>
+            <div class="hb-timeline-role">Hardware Engineer · RF Linearization</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hb-about-content hb-about-content--scripts">
       <script>
       document.addEventListener('DOMContentLoaded', function() {
         const counters = document.querySelectorAll('.hb-achievement-number[data-target]');
@@ -79,6 +124,7 @@ get_header();
         }, { threshold: 0.5 });
         
         counters.forEach(counter => observer.observe(counter));
+
       });
       </script>
   </section>
