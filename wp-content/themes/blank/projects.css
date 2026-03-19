@@ -1,0 +1,119 @@
+/* ----------------------------------------
+   PROJECTS PAGE STYLES
+----------------------------------------- */
+
+.hb-projects {
+  padding-top: 120px;
+}
+
+/* Hero Section */
+.hb-projects-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.hb-projects-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hb-projects-subtitle {
+  font-size: 18px;
+  color: #555555;
+  font-weight: 400;
+}
+
+/* Content Section */
+.hb-projects-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Project Cards */
+.hb-project-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hb-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.hb-project-header {
+  margin-bottom: 16px;
+}
+
+.hb-project-institution {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 20px;
+}
+
+.hb-project-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.hb-project-desc {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555555;
+  margin-bottom: 24px;
+}
+
+.hb-project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hb-project-tags span {
+  padding: 8px 16px;
+  background: #f0f4f8;
+  color: #1a1a1a;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hb-projects-hero {
+    padding: 50px 20px;
+  }
+
+  .hb-project-card {
+    padding: 30px 24px;
+  }
+
+  .hb-project-title {
+    font-size: 24px;
+  }
+
+  .hb-projects-content {
+    padding: 40px 20px 80px;
+  }
+}
+
+

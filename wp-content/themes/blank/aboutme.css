@@ -1,0 +1,129 @@
+/* ----------------------------------------
+   ABOUT ME PAGE STYLES
+----------------------------------------- */
+
+.hb-about {
+  padding-top: 120px;
+}
+
+/* Hero Section */
+.hb-about-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.hb-about-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Content Section */
+.hb-about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+
+/* Intro with Photo */
+.hb-about-intro {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.hb-about-photo {
+  flex-shrink: 0;
+}
+
+.hb-about-photo img {
+  width: 320px;
+  height: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.hb-about-text {
+  flex: 1;
+}
+
+.hb-about-text p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.hb-about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Achievements Section */
+.hb-about-achievements {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.hb-achievement {
+  flex: 1;
+  text-align: center;
+}
+
+.hb-achievement-number {
+  display: block;
+  font-size: 56px;
+  font-weight: 700;
+  color: #2563eb;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.hb-achievement-label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555555;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hb-about-intro {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hb-about-photo img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hb-about-hero {
+    padding: 50px 20px;
+  }
+
+  .hb-about-content {
+    padding: 40px 20px 60px;
+  }
+
+  .hb-about-achievements {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0;
+  }
+
+  .hb-achievement-number {
+    font-size: 44px;
+  }
+}
+

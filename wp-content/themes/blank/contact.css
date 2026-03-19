@@ -1,0 +1,146 @@
+/* ----------------------------------------
+   CONTACT PAGE STYLES
+----------------------------------------- */
+
+.hb-contact {
+  padding-top: 120px;
+}
+
+/* Hero Section */
+.hb-contact-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.hb-contact-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hb-contact-subtitle {
+  font-size: 18px;
+  color: #555555;
+  font-weight: 400;
+}
+
+/* Content Section */
+.hb-contact-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+}
+
+/* Contact Cards */
+.hb-contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.hb-contact-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hb-contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hb-contact-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.hb-contact-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.hb-contact-card a,
+.hb-contact-card span {
+  font-size: 16px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.hb-contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Social Section */
+.hb-contact-social {
+  text-align: center;
+}
+
+.hb-contact-social h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+}
+
+.hb-social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hb-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: #1a1a1a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hb-social-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hb-contact-hero {
+    padding: 50px 20px;
+  }
+
+  .hb-contact-info {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hb-contact-card {
+    padding: 30px 20px;
+  }
+
+  .hb-social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hb-social-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
+
+

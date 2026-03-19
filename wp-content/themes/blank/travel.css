@@ -1,0 +1,114 @@
+/* ----------------------------------------
+   TRAVEL PAGE STYLES
+----------------------------------------- */
+
+.hb-travel {
+  padding-top: 120px;
+}
+
+/* Hero Section */
+.hb-travel-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+}
+
+.hb-travel-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hb-travel-subtitle {
+  font-size: 18px;
+  color: #555555;
+  font-weight: 400;
+}
+
+/* Content Section */
+.hb-travel-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* Section Titles */
+.hb-section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 30px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #2563eb;
+  display: inline-block;
+}
+
+.hb-section-title:not(:first-of-type) {
+  margin-top: 60px;
+}
+
+/* National Parks Gallery */
+.hb-park-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.hb-park-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.hb-park-item:hover {
+  transform: translateY(-5px);
+}
+
+.hb-park-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.hb-park-item:hover img {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.hb-park-name {
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hb-park-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hb-travel-hero {
+    padding: 50px 20px;
+  }
+
+  .hb-park-gallery {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hb-park-name {
+    font-size: 15px;
+  }
+}
+

@@ -1,0 +1,22 @@
+# WordPress sensitive config
+wp-config.php
+
+# WordPress uploads (large media files, not source code)
+wp-content/uploads/
+
+# WordPress cache & temp files
+wp-content/cache/
+wp-content/upgrade/
+wp-content/upgrade-temp-backup/
+wp-content/litespeed/
+
+# WordPress object cache
+wp-content/object-cache.php
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Windows Zone Identifier files
+*:Zone.Identifier

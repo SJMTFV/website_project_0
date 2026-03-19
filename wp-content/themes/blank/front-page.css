@@ -1,0 +1,145 @@
+/* ----------------------------------------
+   FRONT PAGE — COVER SECTION
+----------------------------------------- */
+
+.hb-cover {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 120px);
+  min-height: 420px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hb-cover-overlay {
+  display: none;
+}
+
+.hb-cover-inner {
+  position: relative;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.hb-cover-title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.hb-cover-keywords {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hb-cover-keywords span {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+
+/* ----------------------------------------
+   IDENTITY SYMBOL (Fog + Words Orbit)
+----------------------------------------- */
+
+.hb-identity {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8c9e0 50%, #8fa4c4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hb-identity-inner {
+  position: relative;
+  z-index: 2;
+  width: min(70vw, 900px);
+  height: min(70vw, 900px);
+}
+
+
+/* ----------------------------------------
+   ORBITING TEXT - All tags orbit common center
+----------------------------------------- */
+
+.hb-identity-orbit {
+  position: absolute;
+  inset: 0;
+  animation: orbit-spin 90s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* identity tag text */
+.hb-tag {
+  position: absolute;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "SF Pro Text", "Segoe UI", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2563eb;
+  white-space: nowrap;
+  
+  /* counter-rotate to keep text upright */
+  animation: counter-spin 90s linear infinite;
+}
+
+@keyframes counter-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* position each tag at 90° intervals around center */
+.hb-tag-1 {  /* top - 0° */
+  top: 8%;
+  left: 50%;
+}
+
+.hb-tag-2 {  /* right - 90° */
+  top: 50%;
+  left: 92%;
+}
+
+.hb-tag-3 {  /* bottom - 180° */
+  top: 92%;
+  left: 50%;
+}
+
+.hb-tag-4 {  /* left - 270° */
+  top: 50%;
+  left: 8%;
+}
+
+/* ----------------- responsive tweaks ----------------- */
+
+@media (max-width: 768px) {
+  .hb-identity {
+    aspect-ratio: 16 / 9;
+  }
+  .hb-tag {
+    font-size: 24px;
+    letter-spacing: 0.16em;
+  }
+}
